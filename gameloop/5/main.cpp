@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
       while (lag >= MS_PER_UPDATE) {
          angle += 0.05;
          thing.setPosition(
-            256 + 128*std::cos(angle*2),
+            256 + 128*std::cos(angle*2.2),
             256 + 128*std::sin(angle)
          );
          lag -= MS_PER_UPDATE;
@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
       // EXTRAPOLATE
       float extraangle = angle + 0.05 * (lag/MS_PER_UPDATE);
       thing.setPosition(
-         256 + 128*std::cos(extraangle*2),
+         256 + 128*std::cos(extraangle*2.2),
          256 + 128*std::sin(extraangle)
       );
 

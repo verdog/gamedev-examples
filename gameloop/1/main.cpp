@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
    bool showfps = false;
    bool slowmode = false;
 
-   Thing thing("../resources/sprite.jpg");
+   Thing thing("../resources/sprite1.jpg");
    Words fps;
    sf::Clock gameclock;
    float angle = 0;

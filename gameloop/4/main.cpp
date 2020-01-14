@@ -16,11 +16,14 @@ int main(int argc, char* argv[]) {
    bool showfps = false;
    bool slowmode = false;
 
-   Thing thing("../resources/sprite.jpg");
+   Thing thing("../resources/sprite4.png");
    Words fps;
    Words slow;
    slow._text.setPosition(0,32);
    slow.setString("(Slow mode)");
+   Words updates;
+   updates._text.setPosition(0,64);
+   unsigned int updateCount = 0;
 
    Clock gameclock;
    Time MS_PER_UPDATE = milliseconds(16);
@@ -31,7 +34,7 @@ int main(int argc, char* argv[]) {
    Time lastTime = gameclock.getElapsedTime();
    Time lag = milliseconds(0);
    while (running) {
-      // GET TIME //////////////////////////////////////////////////////////////
+      // GET TIME
       Time startOfFrame = gameclock.getElapsedTime();
       Time elapsed = startOfFrame - lastTime;
       lastTime = startOfFrame;
@@ -48,6 +51,9 @@ int main(int argc, char* argv[]) {
             256 + 128*std::sin(angle)
          );
          lag -= MS_PER_UPDATE;
+
+         updateCount++;
+         updates.setString(std::to_string(updateCount));
       }
 
       if (slowmode == true) {
@@ -64,6 +70,7 @@ int main(int argc, char* argv[]) {
       if (slowmode == true) {
          window.draw(slow);
       }
+      window.draw(updates);
       window.draw(thing);
       window.display();
    }

@@ -6,9 +6,9 @@
 
 struct Thing : public sf::Drawable {
    Thing(std::string file) {
-      _tex.loadFromFile(file, sf::IntRect(0,0,64,64));
+      _tex.loadFromFile(file, sf::IntRect(0,0,128,128));
       _spr.setTexture(_tex);
-      _spr.setOrigin(32,32);
+      _spr.setOrigin(64,64);
    }
 
    void draw(sf::RenderTarget& target, sf::RenderStates states) const {

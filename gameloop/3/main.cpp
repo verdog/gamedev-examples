@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
    bool showfps = false;
    bool slowmode = false;
 
-   Thing thing("../resources/sprite.jpg");
+   Thing thing("../resources/sprite3.jpg");
    Words fps;
    Words slow;
    slow._text.setPosition(0,32);
@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
 
    Time lastTime = gameclock.getElapsedTime();
    while (running) {
-      // GET TIME //////////////////////////////////////////////////////////////
+      // GET TIME
       Time startOfFrame = gameclock.getElapsedTime();
       Time elapsed = startOfFrame - lastTime;
 

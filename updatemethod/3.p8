@@ -6,7 +6,9 @@ __lua__
 
 function _init()
 	entities = {}
+	-- top face
 	add(entities, _face:new({x=32,y=55}))
+	-- bottom face
 	add(entities, _face:new({x=32,y=73}))
 end
 

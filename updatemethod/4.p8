@@ -4,6 +4,7 @@ __lua__
 -- the basic update method
 
 entities = {}
+active = {}
 
 function _init()
 	rebuild_active()

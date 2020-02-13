@@ -84,7 +84,8 @@ function _playerinputcomp:update(a)
 	if (btn(⬆️)) yinp -= 1
 	
 	-- direct access
-	if a.physics_.onground == true and yinp < 0 then
+	if a.physics_.onground == true 
+	and yinp < 0 then
 		a.vy -= 2
 	end
 	
@@ -105,7 +106,9 @@ function _demoinputcomp:update(a)
 	end
 	
 	-- direct access
-	if rnd(60) < 1 and a.physics_.onground == true then
+	if rnd(60) < 1 
+	and a.physics_.onground == true 
+	then
 		a.vy -= 2
 	end
 	

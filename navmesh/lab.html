@@ -1,0 +1,356 @@
+<!DOCTYPE html><html><head>
+      <title>lab</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="lab-navigation-meshes">Lab - Navigation Meshes</h1>
+
+<h2 class="mume-header" id="introduction">Introduction</h2>
+
+<p>This lab will introduce you to how pathfinding can be done in games using both the A* algorithm and navigation meshes.</p>
+<h2 class="mume-header" id="what-is-required-from-you">What is Required From You</h2>
+
+<ul>
+<li>Read the lab</li>
+<li>In the dropbox associated with the lab, just write a sentence or three about a small way you could incorporate pathfinding with navigation meshes or A* in your semester game project if you wanted to. If you already incorporate it, write about that instead.</li>
+</ul>
+<h2 class="mume-header" id="graph-searching-algorithms">Graph Searching Algorithms</h2>
+
+<p>Often in a game, we come across a common problem. Move from position A to position B. In a perfect world, there would never be any obstacles in the way of a game object that wanted to accomplish this, but we don&apos;t live in a perfect world, and neither does the game object. In the real world, if we were faced with an obstacle in our path, we would just go around it. But, since we&apos;re talking about game development and programming, we need to somehow tell the game object exactly how to navigate. There isn&apos;t a &quot;just go around it&quot; function to call (Yet).</p>
+<p>How do we take the idea of &quot;just go around the obstacles&quot; and put it into code?</p>
+<p>Remember <strong>graphs</strong> from foundations of computer science/discrete math? Often times, it makes intuitive sense to represent a game world as a graph. The nodes of the graph are positions you can be in, and the edges are ways you can travel to other positions.</p>
+<p><img src="blob0.png" alt></p>
+<p>Notice how the edges connecting nodes never go through a wall. That&apos;s because in our game, we can&apos;t travel through walls, so nodes with paths that would travel through walls aren&apos;t connected on the graph.</p>
+<p>You can make the graph representing the map in many different ways. The key point to take away from it is that you need to <em>somehow</em> represent the map as a graph for graph searching pathfinding algorithms to work.</p>
+<p>For example, you could turn the map into a grid:</p>
+<p><img src="blob1.png" alt></p>
+<p>Or you could make <em>doorways</em> edges:</p>
+<p><img src="blob2.png" alt></p>
+<p>Again, the bottom line is that the algorithms only see the graph, so make sure the graph you feed into the algorithms reflect the kind of path you want to find.</p>
+<p>At this point, if you want to learn more theory behind graph searching algorithms, I&apos;m going to point you to <a href="https://www.redblobgames.com/pathfinding/a-star/introduction.html">https://www.redblobgames.com/pathfinding/a-star/introduction.html</a>, which is an amazing and interactive page that should get you some intuition for graph pathfinding algorithms. The page has tons of interactive examples that are way better than anything I could try to illustrate in a pdf. (It&apos;s also where I took those screenshots from..!). This page covers a few different algorithms and what they&apos;re good and bad at, including Dijkstra&apos;s and A*.</p>
+<h2 class="mume-header" id="navigation-meshes">Navigation Meshes</h2>
+
+<p>Now, the reason that I glossed over A* and other pathfinding algorithms so quickly is that most of the time, game engines will have better tools available to you! A common tool you see in both 3d and 2d is the navigation mesh (navmesh for short). With a navmesh, instead of representing the world as a graph, you represent it as a 3d mesh or a polygon, which is much more native to the setting of programming games. You give the navmesh the world geometry, bake it, and then you can use it to find paths from point A to point B!</p>
+<p>I don&apos;t actually know the underlying theory behind navmeshes and how they work, but I know that they&apos;re amazing and useful, so here&apos;s how to use one.</p>
+<p>I&apos;ll be using Godot, as usual, but I know Unity has navmesh capabilities too, and the core ideas should be the same.</p>
+<p>The main thing you need to know about navmeshes is that you need to <strong>bake</strong> them. In game engines and similar areas, &quot;baking&quot; refers to <em>generating data from some source</em>. Usually baking is a computationally heavy task, so it&apos;s probably something you won&apos;t be doing every frame of your game. Instead, you bake your data once beforehand and then use that data for some task.</p>
+<p>In a navmesh, baking refers to taking the 3d (or 2d) geometry from your game and generating the necessary data needed to be able to generate paths connecting any two points.</p>
+<p>Let&apos;s look at a quick example.</p>
+<p>In Godot, I&apos;ve set up a tiny little 3d scene:</p>
+<p><img src="godot0.png" alt></p>
+<p>These are just a few MeshInstance nodes.</p>
+<p>Now, to create a navmesh, I create a Navigation node and add a NavigationMeshInstance node as a child.</p>
+<p><img src="godot1.png" alt></p>
+<p>I temporarily move my MeshInstance nodes that make up the level geometry to be children of the NavigationMeshInstance node.</p>
+<p><img src="godot2.png" alt></p>
+<p>Now, I can select my NavigationMeshInstance and click on the &quot;Bake NavMesh&quot; option at the top of the editor.</p>
+<p><img src="godot3.png" alt></p>
+<p><img src="godot4.png" alt></p>
+<p>Now I have a blue navmesh around my geometry! This illustrates where the algorithm has detected that an &quot;agent&quot; can walk.</p>
+<p>Let&apos;s talk a little more about the <strong>agent</strong>. When baking a navmesh, imagine the agent as an imaginary character that walks around your level to determine what areas are reachable. Often you can configure this agent to fit your needs.</p>
+<p>In Godot, I can change the height and radius of the agent. The height determines what things the agent can duck under, and the radius controls how close to walls the agent can get.</p>
+<p>The above image was generated from an agent with a radius of 0.6. If I turn the radius up to 2, I get a much different navmesh.</p>
+<p><img src="godot6.png" alt></p>
+<p>Notice that since I increased the radius of the agent, the navigable area it finds is much farther away from the walls and ledges. Something using this navmesh would not be able to find a path between the highlighted &quot;islands&quot; (or outside of them) because they aren&apos;t connected.</p>
+<p>Now that the navmesh is baked, I can move the nodes <em>in the scene tree</em> that make up the level geometry back to wherever I want them. If you modify the actual level geometry in any way, you need to re-bake the navmesh.</p>
+<p>Now the Navigation node (the parent of the NavigationMeshInstance node) can be queried and return paths between two points with the <code>get_simple_path</code> function.</p>
+<p>How does the <code>get_simple_path</code> function work? It take two arguments, a start point, and an end point. It returns an array of points in space that correspond to the calculated path.</p>
+<p><img src="godot5.png" alt></p>
+<p>The white dots are the points returned from a call to <code>get_simple_path</code>. This is from the Godot 3d navmesh example project, so you can check it out for yourself if you want.</p>
+<p>Extremely simple code to follow the path might look like this:</p>
+<pre data-role="codeBlock" data-info class="language-"><code>func _physics_process(delta):
+  # path_ind is &quot;path index&quot;, the index in the returned array of points that we&apos;re 
+  moving towards.
+  if path_ind &lt; path.size():
+    # calculate the vector pointing towards our next waypoint
+    var move_vec = (path[path_ind] - global_transform.origin)
+    if move_vec.length() &lt; 0.1:
+      # if we&apos;re close enough, move to the next point
+      path_ind += 1
+    else:
+      # move towards next point
+      move_and_slide(move_vec.normalized() * move_speed, Vector3(0, 1, 0))
+</code></pre><h2 class="mume-header" id="godot-40">Godot 4.0</h2>
+
+<p>A quick note: Godot 4.0 will have much better Navigation support, where you won&apos;t have to think about an array of points and most of the work is done for you. Also, you will have the ability to re-bake the navmesh <em>at runtime</em>, which currently is very difficult.</p>
+<p>See this article if you&apos;re interested in the new features: <a href="https://godotengine.org/article/navigation-server-godot-4-0">https://godotengine.org/article/navigation-server-godot-4-0</a>.</p>
+<h2 class="mume-header" id="additional-resources">Additional Resources</h2>
+
+<p>A good video that explains the basics of NavMeshes in Godot: <a href="https://youtu.be/_urHlep2P84">https://youtu.be/_urHlep2P84</a></p>
+<p>Videos about the Unity side of things:<br>
+Navmesh baking: <a href="https://youtu.be/VcNly-cMZV4">https://youtu.be/VcNly-cMZV4</a><br>
+Navmesh agent usage: <a href="https://youtu.be/mP7ulMu5UkU">https://youtu.be/mP7ulMu5UkU</a></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
